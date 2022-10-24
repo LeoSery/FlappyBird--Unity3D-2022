@@ -13,6 +13,11 @@ Game made during the current year 2022 during a Unity module.
 
 This is a flappy bird. Dodge the pipes passing in the middle to score points, if you touch a pipe you lose and start over.
 
+in the game you can:
+
+- Press Space to jump.
+- Press Esc to pause the game.
+
 ## How to open the project:
 
 - Clone the git repository to your computer with the following command :
