@@ -2,12 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
-{   
-    [Header("Managers / Scripts :")]
+{
+    private bool GameIsPaused = false;
     public GameManager GameManager;
     public GameObject pauseMenuUI;
-
-    private bool GameIsPaused = false;
 
     void Update()
     {
@@ -29,15 +27,15 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        GameIsPaused = false;
         Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        GameIsPaused = true;
         Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 
     public void LoadMainMenu()

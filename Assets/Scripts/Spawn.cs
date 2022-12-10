@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    [Header("Managers :")]
-    public GameManager GameManager;
-
-    [Header("Prefabs :")]
     public GameObject prefab;
 
-    [Header("Parameters :")]
     public float spawnRate = 1f;
     public float minHeight = -1f;
     public float maxHeight = 1f;
+
+    public GameManager GameManager;
 
     private void OnEnable()
     {

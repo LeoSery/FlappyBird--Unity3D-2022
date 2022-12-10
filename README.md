@@ -1,37 +1,59 @@
-# UnityB3-TP2-InfiniteSideScroller
+# FlappyBird--Unity3D-2022 :
 
-Game made during the current year 2022 during a Unity module.
+Game made during my bachelor 3 year (2022/2023) for a Unity3D module at Ynov Bordeaux.
 
-## Summary
+## Summary :
 
 - Presentation
+- Game keys
+- Main mechanics
 - How to open the project
 - How to build the project
-- Problems solving
 
-## Presentation
+## Presentation :
 
-This is a flappy bird. Dodge the pipes passing in the middle to score points, if you touch a pipe you lose and start over.
+In this flappy bird realized under unity, you will have to **dodge the pipes which arrives** not your right while pressing on the space key. The pipes can arrive with different heights. **You score points** when you manage to cross pipes **without colliding with one**, if you **collide with one**, **you lose**.
 
-## How to open the project:
+![](https://i.imgur.com/VMR7sgS.png)
+
+![](https://i.imgur.com/elKRdOZ.png)
+
+![](https://i.imgur.com/tqoTHiG.png)
+
+## Game keys :
+
+- _Movement_:
+
+  - Give the impulse to fly : **Space**
+
+- _Pause menu_:
+  - Pause the game: **Escape**
+
+## Main mechanics :
+
+### Avoiding incoming pipes :
+
+You must **avoid colliding with the pipes coming** from the right by **passing in the free space** in the middle. Beware that this one **can arrive at different heights**.
+
+## How to open the project :
 
 - Clone the git repository to your computer with the following command :
 
 ```
-git@github.com:LeoSery/UnityB3-TP2-InfiniteSideScroller.git
+git@github.com:LeoSery/FlappyBird--Unity3D-2022.git
 ```
 
 or
 
 ```
-https://github.com/LeoSery/UnityB3-TP2-InfiniteSideScroller.git
+https://github.com/LeoSery/FlappyBird--Unity3D-2022.git
 ```
 
 - open Unity Hub and do "_Add project from disk_"
 
-  Select "`..\UnityB3-TP2-InfiniteSideScroller`"
+  Select "`..\FlappyBird--Unity3D-2022`"
 
-- Check that the project opens with the Unity editor in version "**2022.1.18f1**"
+- Check that the project opens with the Unity editor in version "**2022.1.21f1**"
 
 ## How to build the project :
 
@@ -44,13 +66,3 @@ https://github.com/LeoSery/UnityB3-TP2-InfiniteSideScroller.git
 - then choose your platform in _"Target Platform"_
 
 - and finally press _"Build And Run"_
-
-## Problems solving :
-
-The project uses different optional Unity packages.
-If you have an error concerning a package go to: **_"Window > Package Manager"_** and check that you have the following packages installed:
-
-```
-- Text Mesh Pro (3.0.6)
-- Unity UI (1.0.0)
-```

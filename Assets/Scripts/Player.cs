@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Scripts :")]
     public MainMenu mainMenu;
 
-    [Header("Parameters :")]
+    private Vector3 direction;
     public float gravity = -9.8f;
-    public Sprite[] spriteArr;
     public int strength = 5;
 
     private SpriteRenderer spriteRenderer;
-    private Vector3 direction;
+    public Sprite[] spriteArr;
     private int spriteIndex;
 
     public void Awake()

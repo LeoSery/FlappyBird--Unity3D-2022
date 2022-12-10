@@ -1,17 +1,12 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Player")]
     public GameObject player;
-
-    [Header("Graphics :")]
-    public Sprite[] spriteArr;
-
-    [HideInInspector] public bool isOnMainMenu = false;
-    
     private SpriteRenderer spriteRenderer;
+    public bool isOnMainMenu = false;
+    public Sprite[] spriteArr;
     private int spriteIndex;
 
     void Awake()

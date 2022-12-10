@@ -3,28 +3,37 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Player :")]
+    private int score;
+    public bool isOnGame = false;
+    // public float difficultyMultiplier;
+    // public float pipeSpeed;
+    // public float newPipesSpeed;
+    private Pipes[] pipes;
+
+    public Parallax backgroundParallax;
+    public Parallax groundParallax;
+
+    [Header("Player")]
     public GameObject Player;
 
-    [Header("Managers / Scripts :")]
+    [Header("Managers")]
     public GameObject SpawnManager;
+
+    [Header("Scripts")]
     public MainMenu MainMenu;
 
-    [Header("Overlay :")]
+    [Header("Overlay")]
+    public GameObject scoreObject;
     private TextMeshProUGUI scoreText;
     public GameObject overlayGameOver;
-    public GameObject scoreObject;
-    public GameObject playButton;
 
-    [HideInInspector] public Parallax backgroundParallax;
-    [HideInInspector] public Parallax groundParallax;
-    [HideInInspector] public bool isOnGame = false;
-    
-    private Pipes[] pipes; 
-    private int score;
+    [Header("Buttons")]
+    public GameObject playButton;
 
     void Awake()
     {
+        // backgroundParallax = GameObject.Find("Background").GetComponent<Parallax>();
+        // groundParallax = GameObject.Find("Ground").GetComponent<Parallax>();
         scoreText = scoreObject.GetComponent<TextMeshProUGUI>();
         isOnGame = true;
 
@@ -35,24 +44,34 @@ public class GameManager : MonoBehaviour
         }
 
         Application.targetFrameRate = 120;
+        //difficultyMultiplier = 0f;
         Player.SetActive(false);
         ResetScore();
         ReplayGame();
     }
 
+    void IncreaseDifficulty()
+    {
+        Debug.LogWarning("Increase difficulty");
+        //difficultyMultiplier += 0.0005f;
+        //backgroundParallax.scrollSpeed += difficultyMultiplier;
+        //groundParallax.scrollSpeed += difficultyMultiplier;
+    }
+
     public void ReplayGame()
     {
+        ResetScore();
+        playButton.SetActive(false);
+        overlayGameOver.SetActive(false);
+        scoreObject.SetActive(true);
+        Player.SetActive(true);
         Player.transform.position = new Vector3(0f,0f,1f);
+
         Time.timeScale = 1f;
         isOnGame = true;
 
-        overlayGameOver.SetActive(false);
-        playButton.SetActive(false);
-        scoreObject.SetActive(true);
-        Player.SetActive(true);
-        ResetScore();
-
         pipes = FindObjectsOfType<Pipes>();
+
         for (int i=0; i < pipes.Length; i++)
         {
             Destroy(pipes[i].gameObject);
@@ -77,6 +96,12 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        //IncreaseDifficulty();
+        // pipes = FindObjectsOfType<Pipes>();
+        // for (int i=0; i < pipes.Length; i++)
+        // {
+        //     pipes[i].GetComponent<Pipes>().SetNewPipeSpeed();
+        // }
     }
 
     public void ResetScore()

@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [Header("Parameters :")]
-    public float scrollSpeed;
-
-    [Header("Graphics :")]
     public MeshRenderer meshRenderer;
+    public float scrollSpeed;
 
     void Awake()
     {
