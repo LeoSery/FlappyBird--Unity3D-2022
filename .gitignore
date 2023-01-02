@@ -33,6 +33,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.vsconfig
 
 *.pidb.meta
 *.pdb.meta
